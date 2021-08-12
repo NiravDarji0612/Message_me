@@ -13,28 +13,9 @@
           <div class="event">
             <div class="content">
               <div class="summary">
-                 <a>Elliot Fu</a> added <a>Jenny Hess</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Christian Rocha</em>: Test message...
+                 <% @messages.each do |message| %>
+                    <%= message.user.username %> : <%= message.message_body %><br/>
+                 <% end %>
               </div>
             </div>
           </div>
@@ -45,7 +26,7 @@
           <div class="field">
             <div class="ui fluid input">
               <input type="text" placeholder="Enter a message...">
-              <i class="bordered inverted orange edit"></i> 
+              <i class="fa fa-envelope fa-3x me-2", style="color: blue;", aria-hidden="true"></i>
             </div>
           </div>
         </form>

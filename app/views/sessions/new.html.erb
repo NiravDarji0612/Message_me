@@ -3,21 +3,23 @@
         <div class="ui two column very relaxed stackable grid">
             <div class="column">
               <div class="ui form">
-                <div class="field">
-                  <label>Username</label>
-                  <div class="ui left input">
-                    <input type="text" placeholder="Username">
-                    <i class="user"></i>
+                <%= form_with(model: @message) do |f| %>
+                  <div class="field">
+                    <%= f.label :username, "Username" %>
+                    <div class="ui left input">
+                      <%= f.text_field :username, placeholder: "Username" %>
+                      <i class="user"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="field">
-                  <label>Password</label>
-                  <div class="ui left input">
-                    <input type="password">
-                    <i class="lock"></i>
+                  <div class="field">
+                    <%= f.label :password, "Password" %>
+                    <div class="ui left input">
+                      <%= f.password_field :password, placeholder: "Password" %>
+                      <i class="lock"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="ui blue submit button">Login</div>
+                  <%= f.button "Login", class:"ui blue submit button" %>
+                <% end %>
               </div>
             </div>
             <div class="middle aligned column">
