@@ -8,8 +8,8 @@
   <div class="container"></div>
   <div class="eleven wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui large feed">
+      <div class="content" id="messages">
+        <div class="ui large feed", id="message-container">
           <div class="event">
             <div class="content">
               <div class="summary">
@@ -22,14 +22,14 @@
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form" }, url: message_path, remote: true) do |f|%>
           <div class="field">
             <div class="ui fluid input">
-              <input type="text" placeholder="Enter a message...">
-              <i class="fa fa-envelope fa-3x me-2", style="color: blue;", aria-hidden="true"></i>
+              <%= f.text_field :message_body %>
+              <%= f.button '<i class="fa fa-envelope fa-3x me-2", style="color: blue;", aria-hidden="true"></i>'.html_safe %>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div> 
   </div>

@@ -3,7 +3,7 @@
         <div class="ui two column very relaxed stackable grid">
             <div class="column">
               <div class="ui form">
-                <%= form_with(model: @message) do |f| %>
+                <%= form_for(:session, url: login_path) do |f| %>
                   <div class="field">
                     <%= f.label :username, "Username" %>
                     <div class="ui left input">
@@ -18,7 +18,7 @@
                       <i class="lock"></i>
                     </div>
                   </div>
-                  <%= f.button "Login", class:"ui blue submit button" %>
+                  <%= f.submit "Login", class:"ui blue submit button" %>
                 <% end %>
               </div>
             </div>
