@@ -12,5 +12,17 @@
  *
  *= require_tree .
  *= require_self
+ *= require_semantic-ui
  */
+@import "semantic-ui";
+ 
+ #messages {
+    height: 15em;
+    overflow: auto;
+  }
 
+  .input {
+    button {
+      display:none;
+    }
+  }
